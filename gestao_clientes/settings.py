@@ -81,7 +81,8 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/medi' \
+            'a/'
 MEDIA_ROOT = 'media'
 
 LOGIN_URL = '/login/'
