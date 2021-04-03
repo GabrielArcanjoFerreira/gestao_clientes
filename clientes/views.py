@@ -13,6 +13,11 @@ class PersonListView(ListView):
     model = Person
     template_name = 'person.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['footer_message'] = 'Django Curso Super Avançado'
+        return context
+
 
 class PersonDetail(DetailView):
     model = Person

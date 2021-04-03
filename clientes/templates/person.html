@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-
+{% load filters %}
+{% load tags %}
 
 {% block title %} Administracao {% endblock %}
 
@@ -40,15 +41,19 @@
 
             {% endif %}
         </div>
+        {% filter force_escape|lower %}
+            This text will be HTML-escaped, and will appear in all lowercase.
+        {% endfilter %}
+
+        {{ footer_message|my_filter }}
+        {% current_time '%d/%m/%Y' %}
     </div>
 
 
 {% endblock %}
 
+
+
 {% block footer %}
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Desenvolvimento web com Django 2.x</span>
-      </div>
-    </footer>
+    {% include 'footer.html' %}
 {% endblock %}
